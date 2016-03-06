@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/escribano/repos/commands"
-	"github.com/escribano/repos/common/debug"
-	"github.com/escribano/repos/common"
 	"github.com/escribano/clif"
+	"github.com/escribano/repos/commands"
+	"github.com/escribano/repos/common"
+	"github.com/escribano/repos/common/debug"
 	"os"
 	"path/filepath"
 )
@@ -20,27 +20,27 @@ func addDefaultOptions(cli *clif.Cli) {
 	storeOpt := clif.NewOption("store", "s", "Path JSON file storing the registered repos", storeDefault, true, false).
 		SetEnv("REPOS_STORE").
 		SetParse(func(name, value string) (string, error) {
-		lst := common.NewList(value)
-		cli.Register(lst)
-		if err := lst.Refresh(); err != nil {
-			return value, err
-		} else {
-			return value, nil
-		}
-	})
+			lst := common.NewList(value)
+			cli.Register(lst)
+			if err := lst.Refresh(); err != nil {
+				return value, err
+			} else {
+				return value, nil
+			}
+		})
 	verboseOpt := clif.NewOption("verbose", "v", "Log verbose messages to STDERR", "", false, true).
 		IsFlag().
 		SetEnv("REPOS_DEBUG").
 		SetParse(func(name, value string) (string, error) {
-		if value == "true" {
-			if debug.DebugLevel < debug.DEBUG3 {
-				debug.DebugLevel++
+			if value == "true" {
+				if debug.DebugLevel < debug.DEBUG3 {
+					debug.DebugLevel++
+				}
+			} else {
+				debug.DebugLevel = 0
 			}
-		} else {
-			debug.DebugLevel = 0
-		}
-		return value, nil
-	})
+			return value, nil
+		})
 	cli.AddDefaultOptions(storeOpt, verboseOpt)
 }
 

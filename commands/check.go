@@ -1,9 +1,9 @@
 package commands
 
 import (
-	"github.com/ukautz/repos/common"
-	. "github.com/ukautz/repos/common/debug"
-	"gopkg.in/ukautz/clif.v1"
+	"github.com/escribano/repos/common"
+	. "github.com/escribano/repos/common/debug"
+	"github.com/escribano/clif"
 	"sync"
 	"fmt"
 )

@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"bytes"
 	"fmt"
-	. "github.com/ukautz/repos/common/debug"
+	. "github.com/escribano/repos/common/debug"
 	"os"
 	"os/exec"
 	"path/filepath"

@@ -2,8 +2,8 @@ package commands
 
 import (
 	"fmt"
-	"github.com/ukautz/repos/common"
-	"gopkg.in/ukautz/clif.v1"
+	"github.com/escribano/repos/common"
+	"github.com/escribano/clif"
 	"path/filepath"
 )
 

@@ -1,10 +1,10 @@
 package commands
 import (
-	"github.com/ukautz/repos/common"
-	. "github.com/ukautz/repos/common/debug"
+	"github.com/escribano/repos/common"
+	. "github.com/escribano/repos/common/debug"
 	"regexp"
 	"fmt"
-	"gopkg.in/ukautz/clif.v1"
+	"github.com/escribano/clif"
 )
 
 func addRepoFilterOptions(c *clif.Command) *clif.Command {
